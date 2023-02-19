@@ -1,0 +1,59 @@
+@startuml relations
+
+skinparam linetype ortho
+
+entity Manufacturer {
+    * id: <<generated>>
+    --
+    * name: string
+    * country: string
+    * url: string
+}
+
+entity Weapon {
+    * id: <<generated>>
+    --
+    * name: string
+    * description: string
+    * manufacturer: Manufacturer
+    * type: Type
+    * ammo: Ammo
+    * url: string
+}
+
+entity WeaponInstance {
+    id: <<generated>>
+    --
+    * weapon: Weapon
+    * status: enum
+    * url: string
+}
+
+entity Type {
+    * id: <<generated>>
+    --
+    * name: string
+    * url: string
+}
+
+entity Ammo {
+    * id: <<generated>>
+    --
+    * name: string
+    * url: string
+}
+
+entity AmmoInstance {
+    * id: <<generated>>
+    --
+    * ammo: Ammo
+}
+
+
+Manufacturer "1" -- "many" Weapon : produces
+Weapon "many" -- "many" Type : has
+WeaponInstance "many" -- "1" Weapon : has
+Weapon "many" -- "1" Ammo : uses
+AmmoInstance "many" -- "1" Ammo : has
+
+@enduml
