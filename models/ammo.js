@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 
 const AmmoSchema = new Schema({
   name: { type: String, required: true },
+  imageUrl: { type: String },
 });
 
 AmmoSchema.virtual('url').get(function () {
