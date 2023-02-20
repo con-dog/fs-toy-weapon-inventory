@@ -1,13 +1,23 @@
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
+const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const dotenv = require('dotenv');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
+dotenv.config();
 const app = express();
+
+mongoose.set('strictQuery', false);
+const mongoDB = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster1.i1gjaks.mongodb.net/?retryWrites=true&w=majority`;
+main().catch((err) => console.log(err));
+async function main() {
+  await mongoose.connect(mongoDB);
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
