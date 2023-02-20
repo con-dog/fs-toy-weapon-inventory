@@ -98,7 +98,7 @@ function manufacturerCreate (name, country, imageUrl = "", cb) {
   });
 }
 
-function weaponCreate (name, description, manufacturer, class_, ammo, imageUrl = "", cb) => {
+function weaponCreate (name, description, manufacturer, class_, ammo, imageUrl = "", cb) {
   const weaponDetail = { name: name, description: description, manufacturer: manufacturer, ammo: ammo, imageUrl: imageUrl };
   if (class_ != false) weaponDetail.class = class_;
 
