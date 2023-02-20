@@ -7,6 +7,7 @@ entity Manufacturer {
     --
     * name: string
     * country: string
+    * imageUrl: string
     * url: string
 }
 
@@ -18,6 +19,7 @@ entity Weapon {
     * manufacturer: Manufacturer
     * class: Class
     * ammo: Ammo
+    * imageUrl: string
     * url: string
 }
 
@@ -40,6 +42,7 @@ entity Ammo {
     * id: <<generated>>
     --
     * name: string
+    * imageUrl: string
     * url: string
 }
 
