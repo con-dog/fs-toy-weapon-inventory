@@ -16,7 +16,7 @@ entity Weapon {
     * name: string
     * description: string
     * manufacturer: Manufacturer
-    * type: Type
+    * class: Class
     * ammo: Ammo
     * url: string
 }
@@ -29,7 +29,7 @@ entity WeaponInstance {
     * url: string
 }
 
-entity Type {
+entity Class {
     * id: <<generated>>
     --
     * name: string
@@ -51,7 +51,7 @@ entity AmmoInstance {
 
 
 Manufacturer "1" -- "many" Weapon : produces
-Weapon "many" -- "many" Type : has
+Weapon "many" -- "many" Class : has
 WeaponInstance "many" -- "1" Weapon : has
 Weapon "many" -- "1" Ammo : uses
 AmmoInstance "many" -- "1" Ammo : has
