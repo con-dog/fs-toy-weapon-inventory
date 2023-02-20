@@ -183,16 +183,16 @@ function createClasses (cb) {
 function createAmmo (cb) {
   async.parallel([
     function (callback) {
-      ammoCreate('Water', callback);
+      ammoCreate('Water', 'https://media.discordapp.net/attachments/1076700712584613948/1077129475193589800/corndog_water_droplet_ammunition_947b9318-5f13-4dfe-a68a-0ea11bf0439c.png?width=601&height=601', callback);
     },
     function (callback) {
-      ammoCreate('Marbles', callback);
+      ammoCreate('Marbles', 'https://media.discordapp.net/attachments/1076700712584613948/1077129396961415238/corndog_Marble_ammo_b37c4097-af86-4158-894e-f35076ae235b.png?width=601&height=601', callback);
     },
     function (callback) {
-      ammoCreate('Salt', callback);
+      ammoCreate('Salt', 'https://media.discordapp.net/attachments/1076700712584613948/1077311553742831636/corndog_salt_ammunition_135973ab-2e7a-4b6a-a875-c57d09e0d096.png?width=601&height=601', callback);
     },
     function (callback) {
-      ammoCreate('Potatoes', callback);
+      ammoCreate('Potatoes', 'https://media.discordapp.net/attachments/1076700712584613948/1077129294561689651/corndog_Potato_ammo_1993e41a-a292-43d0-80e3-2096369b3e6a.png?width=601&height=601', callback);
     },
   ],
     cb); // Optional callback
@@ -219,11 +219,55 @@ function createWeapons (cb) {
     cb); // Optional callback
 };
 
+function createWeaponInstances (cb) {
+  async.parallel([
+    function (callback) {
+      weaponinstanceCreate(weapons[0], 'Available', callback);
+    },
+    function (callback) {
+      weaponinstanceCreate(weapons[1], 'Available', callback);
+    },
+    function (callback) {
+      weaponinstanceCreate(weapons[2], 'Available', callback);
+    },
+    function (callback) {
+      weaponinstanceCreate(weapons[3], 'Maintenance', callback);
+    },
+    function (callback) {
+      weaponinstanceCreate(weapons[4], 'Loaned', callback);
+    },
+  ],
+    cb); // Optional callback
+};
+
+function createAmmoInstances (cb) {
+  async.parallel([
+    function (callback) {
+      ammoinstanceCreate(ammos[0], callback);
+    },
+    function (callback) {
+      ammoinstanceCreate(ammos[1], callback);
+    },
+    function (callback) {
+      ammoinstanceCreate(ammos[2], callback);
+    },
+    function (callback) {
+      ammoinstanceCreate(ammos[3], callback);
+    },
+  ],
+    cb); // Optional callback
+};
+
+
+
 
 async.series([
-  createGenreAuthors,
-  createBooks,
-  createBookInstances
+  createManufacturers,
+  createClasses,
+  createAmmo,
+  createWeapons,
+  createWeaponInstances,
+  createAmmoInstances,
 ],
   // Optional callback
   function (err, results) {
@@ -231,8 +275,8 @@ async.series([
       console.log('FINAL ERR: ' + err);
     }
     else {
-      console.log('BOOKInstances: ' + bookinstances);
-
+      console.log('WeaponInstances: ' + weaponinstances);
+      console.log('AmmoInstances: ' + ammoinstances);
     }
     // All done, disconnect from database
     mongoose.connection.close();
