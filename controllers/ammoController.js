@@ -5,6 +5,10 @@ exports.ammo_list = (req, res) => {
   res.send('NOT IMPLEMENTED: Ammo list');
 };
 
+exports.ammo_detail = (req, res) => {
+  res.send('NOT IMPLEMENTED: Ammo detail: ' + req.params.id);
+};
+
 exports.ammo_create_get = (req, res) => {
   res.send('NOT IMPLEMENTED: Ammo create GET');
 };
