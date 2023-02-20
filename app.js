@@ -15,7 +15,7 @@ const app = express();
 mongoose.set('strictQuery', false);
 const mongoDB = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster1.i1gjaks.mongodb.net/?retryWrites=true&w=majority`;
 main().catch((err) => console.log(err));
-async function main() {
+async function main () {
   await mongoose.connect(mongoDB);
 }
 
