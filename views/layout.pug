@@ -1,7 +1,21 @@
 doctype html
-html
+html(lang='en')
   head
     title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
+    block header
+      header
+        nav
+          ul(class='header-nav')
+            li
+              a(href='/catalog') Home
+            li
+              a(href='/catalog/ammos') Ammo
+            li
+              a(href='/catalog/weapons') Weapons
+
+    div(class='content-container')
+      block content

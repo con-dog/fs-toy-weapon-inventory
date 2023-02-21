@@ -32,8 +32,6 @@ exports.index = (req, res) => {
   });
 };
 
-
-
 // Display list of all Weapons.
 exports.weaponList = (req, res) => {
   res.send('NOT IMPLEMENTED: Weapon list');

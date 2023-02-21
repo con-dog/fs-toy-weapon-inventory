@@ -1,18 +1,29 @@
 extends layout
 
 block content
-  h1= title
-  h2 Welcome to #[em Toy Weapons Co]
+  h1 #[em Toy Weapons Co]
 
   if error
     p Error getting dynamic content.
   else
-    p The Emporium has the following record counts:
+    p We have the following record counts:
 
-    ul
-      li #[strong Ammo Types:] !{data.ammoCount}
-      li #[strong Ammo Stocked:] !{data.ammoinstanceCount}
-      li #[strong Manufacturers Listed] !{data.manufacturerCount}
-      li #[strong Weapon Classes:] !{data.classCount}
-      li #[strong Weapon Types:] !{data.weaponCount}
-      li #[strong Weapons in Stock:] !{data.weaponinstanceCount}
+    table
+      tr
+        td #[strong Ammo Types:]
+        td !{data.ammoCount}
+      tr
+        td #[strong Ammo Stocked:]
+        td !{data.ammoinstanceCount}
+      tr
+        td #[strong Manufacturers]
+        td !{data.manufacturerCount}
+      tr
+        td #[strong Weapon Classes:]
+        td !{data.classCount}
+      tr
+        td #[strong Weapon Types:]
+        td !{data.weaponCount}
+      tr
+        td #[strong Weapons in Stock:]
+        td !{data.weaponinstanceCount}
