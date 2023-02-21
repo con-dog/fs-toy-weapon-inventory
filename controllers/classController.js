@@ -1,33 +1,33 @@
 const Class = require('../models/classModel');
 
-exports.class_list = (req, res) => {
+exports.classList = (req, res) => {
   res.send('NOT IMPLEMENTED: Class list');
 }
 
-exports.class_detail = (req, res) => {
+exports.classDetail = (req, res) => {
   res.send('NOT IMPLEMENTED: Class detail: ' + req.params.id);
 }
 
-exports.class_create_get = (req, res) => {
+exports.classCreateGet = (req, res) => {
   res.send('NOT IMPLEMENTED: Class create GET');
 }
 
-exports.class_create_post = (req, res) => {
+exports.classCreatePost = (req, res) => {
   res.send('NOT IMPLEMENTED: Class create POST');
 }
 
-exports.class_delete_get = (req, res) => {
+exports.classDeleteGet = (req, res) => {
   res.send('NOT IMPLEMENTED: Class delete GET');
 }
 
-exports.class_delete_post = (req, res) => {
+exports.classDeletePost = (req, res) => {
   res.send('NOT IMPLEMENTED: Class delete POST');
 }
 
-exports.class_update_get = (req, res) => {
+exports.classUpdateGet = (req, res) => {
   res.send('NOT IMPLEMENTED: Class update GET');
 }
 
-exports.class_update_post = (req, res) => {
+exports.classUpdatePost = (req, res) => {
   res.send('NOT IMPLEMENTED: Class update POST');
 }

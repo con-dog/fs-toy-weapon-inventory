@@ -1,26 +1,26 @@
 const Ammo = require('../models/ammo');
 
 // Display list of all ammo
-exports.ammo_list = (req, res) => {
+exports.ammoList = (req, res) => {
   res.send('NOT IMPLEMENTED: Ammo list');
 };
 
-exports.ammo_detail = (req, res) => {
+exports.ammoDetail = (req, res) => {
   res.send('NOT IMPLEMENTED: Ammo detail: ' + req.params.id);
 };
 
-exports.ammo_create_get = (req, res) => {
+exports.ammoCreateGet = (req, res) => {
   res.send('NOT IMPLEMENTED: Ammo create GET');
 };
 
-exports.ammo_create_post = (req, res) => {
+exports.ammoCreatePost = (req, res) => {
   res.send('NOT IMPLEMENTED: Ammo create POST');
 };
 
-exports.ammo_delete_get = (req, res) => {
+exports.ammoDeleteGet = (req, res) => {
   res.send('NOT IMPLEMENTED: Ammo delete GET');
 };
 
-exports.ammo_delete_post = (req, res) => {
+exports.ammoDeletePost = (req, res) => {
   res.send('NOT IMPLEMENTED: Ammo delete POST');
 };
