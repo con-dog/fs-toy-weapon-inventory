@@ -1,4 +1,4 @@
-const Weapon = require('../models/weaponModel');
+const Weapon = require('../models/weapon');
 
 exports.index = (req, res) => {
   res.send("NOT IMPLEMENTED: Site Home Page");

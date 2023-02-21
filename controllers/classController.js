@@ -1,4 +1,4 @@
-const Class = require('../models/classModel');
+const Class = require('../models/class');
 
 exports.classList = (req, res) => {
   res.send('NOT IMPLEMENTED: Class list');
