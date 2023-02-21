@@ -109,7 +109,7 @@ router.post('/ammo/:id/delete', ammoController.ammoDeletePost);
 router.get('/ammo/:id', ammoController.ammoDetail);
 
 // GET request for list of all Ammo.
-router.get('/ammo', ammoController.ammoList);
+router.get('/ammos', ammoController.ammoList);
 
 // AMMOINSTANCE ROUTES //
 
