@@ -1,8 +1,38 @@
+const async = require('async');
+
+const Ammo = require('../models/ammo');
+const Ammoinstance = require('../models/ammoinstance');
+const Class = require('../models/class');
+const Manufacturer = require('../models/manufacturer');
 const Weapon = require('../models/weapon');
+const Weaponinstance = require('../models/weaponinstance');
 
 exports.index = (req, res) => {
-  res.send("NOT IMPLEMENTED: Site Home Page");
+  async.parallel({
+    weaponCount: (cb) => {
+      Weapon.countDocuments({}, cb);
+    },
+    weaponinstanceCount: (cb) => {
+      Weaponinstance.countDocuments({}, cb);
+    },
+    ammoCount: (cb) => {
+      Ammo.countDocuments({}, cb);
+    },
+    ammoinstanceCount: (cb) => {
+      Ammoinstance.countDocuments({}, cb);
+    },
+    classCount: (cb) => {
+      Class.countDocuments({}, cb);
+    },
+    manufacturerCount: (cb) => {
+      Manufacturer.countDocuments({}, cb);
+    },
+  }, (err, results) => {
+    res.render('index', { title: 'Home', error: err, data: results });
+  });
 };
+
+
 
 // Display list of all Weapons.
 exports.weaponList = (req, res) => {
